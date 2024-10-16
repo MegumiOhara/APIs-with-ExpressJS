@@ -27,6 +27,9 @@ app.get('/users', (req,res) => {
     res.json(users);
 });
 
+app.get('/greet', (req, res) => {
+    res.send('Greetings visitor!');
+});
 //Middleware to parse JSON data first
 app.use(express.json());
 
