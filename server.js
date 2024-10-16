@@ -26,3 +26,13 @@ app.get('/users', (req,res) => {
     ];
     res.json(users);
 });
+
+//Middleware to parse JSON data first
+app.use(express.json());
+
+//create POST route
+app.post('/users', (req,res) => {
+    const newUser = req.body;
+    console.log(newUser); //Log the data
+    res.json({message: 'User added successfully', user: newUser });
+});
