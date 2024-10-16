@@ -39,3 +39,9 @@ app.post('/users', (req,res) => {
     console.log(newUser); //Log the data
     res.json({message: 'User added successfully', user: newUser });
 });
+
+app.post('/submit', (req,res) => {
+    const {name, age} = req.body;
+    console.log(name, age);
+    res.json({message: `Hello ${name}, you are ${age} years old`});
+});
